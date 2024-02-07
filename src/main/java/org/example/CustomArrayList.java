@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 public class CustomArrayList<E> implements ArrayInterface<E> {
 
+    public static final String MSG = "Index: %d, Size: %d";
     // Поле для хранения элементов списка
     private E[] values;
 
@@ -47,7 +48,7 @@ public class CustomArrayList<E> implements ArrayInterface<E> {
     @Override
     public void add(int index, E e) {
         if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index: "+index+", Size: " + size);
+            throw new IndexOutOfBoundsException(String.format(MSG, index, size)); // так лучше
         }
         try {
             E[] temp = values;

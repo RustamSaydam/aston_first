@@ -15,7 +15,7 @@ class CustomArrayListTest {
         list.add("Till Lindemann");
         assertEquals(3, list.size());
         assertEquals("Rustam Saidam", list.get(0));
-        assertEquals("Freddy Mercury", list.get(1));
+        assertEquals("Freddy Mercury", list.get(1)); // когда несколько ассертов их надо пихать в assertA;;
         assertEquals("Till Lindemann", list.get(2));
 
 
@@ -48,7 +48,7 @@ class CustomArrayListTest {
 
     @Test
     void testClear() {
-        CustomArrayList<Integer> list = new CustomArrayList<>(); //Дописать
+        CustomArrayList<Integer> list = new CustomArrayList<>(); //Дописать лучше тестить на одном дженерике и инициализировать его в поле теста чтобы мбыло меньше дубликатов
         list.clear();
         Assertions.assertEquals(0, list.size());
     }
@@ -63,7 +63,7 @@ class CustomArrayListTest {
     }
 
     @Test
-    void size() {
+    void size() { // прочитай про конвенции нейминга тестов
         CustomArrayList<String> list = new CustomArrayList<>();
         list.add("Rustam Saidam");
         list.add("Harry Potter");
